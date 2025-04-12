@@ -111,19 +111,19 @@ export default function ContactPage() {
               </div>
               <div className="p-3 sm:p-4 bg-white/10 backdrop-blur-md rounded-lg border border-white/20">
                 <h3 className="font-medium text-white mb-2 text-sm sm:text-base">Phone</h3>
-                <p className="text-white/80 text-sm sm:text-base">+1 (555) 123-4567</p>
+                <p className="text-white/80 text-sm sm:text-base">+91 7779890355</p>
               </div>
               <div className="p-3 sm:p-4 bg-white/10 backdrop-blur-md rounded-lg border border-white/20">
                 <h3 className="font-medium text-white mb-2 text-sm sm:text-base">Address</h3>
                 <p className="text-white/80 text-sm sm:text-base">
-                  123 Tech Street<br />
-                  San Francisco, CA 94107
+                  Aryabhatta Hostel, NITP<br />
+                  Bihar, India<br />
                 </p>
               </div>
               <div className="p-3 sm:p-4 bg-white/10 backdrop-blur-md rounded-lg border border-white/20">
                 <h3 className="font-medium text-white mb-2 text-sm sm:text-base">Business Hours</h3>
                 <p className="text-white/80 text-sm sm:text-base">
-                  Monday - Friday: 9am - 5pm PST<br />
+                  Monday - Friday: 9am - 5pm GMT<br />
                   Saturday - Sunday: Closed
                 </p>
               </div>

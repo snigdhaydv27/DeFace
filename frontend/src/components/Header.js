@@ -25,8 +25,12 @@ export default function Header() {
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 py-4 flex justify-between items-center">
-        <Link href="/" className="text-2xl font-bold hover:text-blue-400 transition-colors">
-          DeFace
+        <Link href="/" className="flex items-center hover:opacity-80 transition-opacity">
+          <img
+            src="/logo.png"
+            alt="DeFace Logo"
+            className="h-8 sm:h-14 w-auto"
+          />
         </Link>
         <nav className="space-x-6">
           <Link href="/about" className="hover:text-blue-400 transition-colors">

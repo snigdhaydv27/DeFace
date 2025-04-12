@@ -19,27 +19,24 @@ export default function Footer() {
 
       {/* Content */}
       <div className="container mx-auto px-4 relative z-10">
-        <div className="flex flex-col md:flex-row justify-between items-center">
-          <div className="mb-4 md:mb-0">
-            <h3 className="text-xl font-bold">DeFace</h3>
-          </div>
+        <div className="flex flex-col items-center justify-center text-center">
           <div className="flex space-x-6">
             <Link 
-              href="https://instagram.com/yourprofile" 
+              href="https://instagram.com/snigdha_ydv" 
               target="_blank"
               className="hover:text-blue-400 transition-colors"
             >
               <Instagram size={24} />
             </Link>
             <Link 
-              href="https://github.com/yourprofile" 
+              href="https://github.com/snigdhaydv27" 
               target="_blank"
               className="hover:text-blue-400 transition-colors"
             >
               <Github size={24} />
             </Link>
             <Link 
-              href="https://linkedin.com/in/yourprofile" 
+              href="https://www.linkedin.com/in/snigdha-kumar-90445b298/" 
               target="_blank"
               className="hover:text-blue-400 transition-colors"
             >
@@ -47,7 +44,7 @@ export default function Footer() {
             </Link>
           </div>
         </div>
-        <div className="mt-6 pt-6 text-center text-gray-400 border-t border-gray-700">
+        <div className="mt-6 pt-6 text-center text-gray-400">
           <p>&copy; {new Date().getFullYear()} DeFace. All rights reserved.</p>
         </div>
       </div>

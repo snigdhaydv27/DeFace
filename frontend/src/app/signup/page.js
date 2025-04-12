@@ -36,9 +36,18 @@ export default function SignupPage() {
 
       {/* Main Content */}
       <main className="flex-grow flex items-center justify-center px-4 sm:px-6 lg:px-8 py-12 sm:py-16 relative z-10">
-        <div className="w-full max-w-md">
+        <div className="w-full max-w-md relative">
+          {/* Added GIF */}
+          <div className="absolute -top-10 -right-10 w-36 h-36 z-20">
+            <img
+              src="/animation.gif"
+              alt="Animated icon"
+              className="w-full h-full object-contain"
+            />
+          </div>
+          
           <h1 className="text-2xl sm:text-3xl font-bold text-center text-white mb-8">
-            Create Your Account
+        Create Your Account
           </h1>
           <div className="bg-transparent backdrop-blur-md rounded-xl shadow-2xl p-6 sm:p-8">
             <AuthForm type="signup" onSubmit={handleSignup} />

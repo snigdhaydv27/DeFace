@@ -134,7 +134,7 @@ export default function Home() {
                   </div>
                   <h3 className="text-xl font-semibold mb-3">
                     "In an era where visual misinformation can spread rapidly,
-                    tools like DeepCheck are essential for maintaining trust in
+                    tools like DeFace are essential for maintaining trust in
                     our digital ecosystem."
                   </h3>
                 </div>

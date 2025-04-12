@@ -25,9 +25,18 @@ export default function AboutPage() {
                 Our Mission
               </h2>
               <p className="text-sm sm:text-base text-white/80 mb-6">
-                As AI technology evolves, so does the potential for misuse.
-                DeepCheck provides cutting-edge detection capabilities to help
-                identify manipulated media.
+                "To empower individuals, institutions, and digital platforms
+                with AI-driven tools that distinguish between deepfakes,
+                AI-generated images, and authentic content — promoting trust,
+                transparency, and digital integrity." As synthetic media becomes
+                more sophisticated, our mission is to tackle visual
+                misinformation with intelligent, accessible technology. Our
+                solution enables researchers to analyze fake content, helps
+                journalists verify authenticity, and supports law enforcement in
+                validating digital evidence. Social platforms can also use our
+                tools to identify and moderate harmful visual content. At
+                AI-liens, we’re committed to using technology as a force for
+                truth in an increasingly artificial world.
               </p>
             </section>
 
@@ -36,10 +45,18 @@ export default function AboutPage() {
                 Our Team
               </h2>
               <p className="text-sm sm:text-base text-white/80 mb-6">
-                Our team of experts in artificial intelligence and machine
-                learning has developed proprietary algorithms specifically
-                designed to detect the subtle artifacts and inconsistencies
-                present in AI-generated and manipulated content.
+                Welcome to AI-liens, a team of passionate and driven second-year
+                Computer Science students from the National Institute of
+                Technology Patna. We are a group of young innovators
+                enthusiastic about exploring the intersection of Machine
+                Learning, Web Development, and Cybersecurity. Our mission is to
+                build intelligent systems that can detect and classify visual
+                manipulations — including AI-generated content and deepfakes —
+                to make the digital world safer, more transparent, and
+                trustworthy for everyone. As digital misinformation becomes
+                increasingly sophisticated, we believe it’s our responsibility
+                as future technologists to build tools that protect digital
+                integrity and uphold truth.
               </p>
             </section>
 
@@ -48,9 +65,29 @@ export default function AboutPage() {
                 Technology
               </h2>
               <p className="text-sm sm:text-base text-white/80">
-                We're committed to maintaining the highest standards of accuracy
-                and staying ahead of emerging deepfake technologies through
-                continuous research and development.
+                At the heart of our project lies DeFace, a powerful image
+                classification model built on Google’s Vision Transformer (ViT)
+                architecture. Designed to move beyond binary real/fake
+                detection, DeFace classifies images into three categories:
+                Artificial, Deepfake, and Real. It achieves an impressive 97.5%
+                accuracy, thanks to extensive training on diverse datasets such
+                as FaceForensics++ and CelebDF. By combining CNNs for extracting
+                fine-grained local features with the global context-awareness of
+                Transformers, our hybrid model ensures robust performance across
+                varied image manipulations. To enhance usability, classification
+                results are presented alongside a visual bar chart, making
+                predictions easy to interpret even for non-technical users. On
+                the development side, our web stack is designed for performance,
+                scalability, and seamless user interaction. The frontend is
+                built using Next.js with TailwindCSS for responsive and elegant
+                UI design. Our backend leverages Node.js and Express.js, with
+                secure authentication powered by JWT (JSON Web Tokens). We use
+                MongoDB Atlas as our cloud-based NoSQL database for efficient
+                data handling, while Multer manages image uploads. The entire
+                application is deployed on Vercel, ensuring fast global delivery
+                and smooth user experience. Integration with Hugging Face
+                Transformers enables real-time inference using our
+                custom-trained model.
               </p>
             </section>
           </div>
