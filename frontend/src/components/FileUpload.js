@@ -52,37 +52,39 @@ export default function FileUpload() {
   };
 
   return (
-    <div className="bg-white p-6 rounded-lg shadow-md">
-      <h2 className="text-xl font-semibold mb-4">Upload a File</h2>
+    <div className="w-full mx-auto bg-transparent backdrop-blur-md p-4 sm:p-6 md:p-8 rounded-lg shadow-2xl border border-white/20">
+      <h2 className="text-lg sm:text-xl font-semibold mb-4 sm:mb-6 text-white">Upload a File</h2>
       {message.text && (
         <div
-          className={`p-3 mb-4 rounded-md ${
+          className={`p-3 mb-4 sm:mb-6 rounded-md backdrop-blur-sm ${
             message.type === 'success'
-              ? 'bg-green-100 text-green-700'
-              : 'bg-red-100 text-red-700'
+              ? 'bg-green-100/50 text-green-700'
+              : 'bg-red-100/50 text-red-700'
           }`}
         >
-          {message.text}
+          <p className="text-sm sm:text-base">{message.text}</p>
         </div>
       )}
-      <form onSubmit={handleUpload}>
-        <div className="mb-4">
-          <label className="block text-gray-700 mb-2" htmlFor="file-upload">
+      <form onSubmit={handleUpload} className="space-y-4 sm:space-y-6">
+        <div>
+          <label className="block text-white text-sm sm:text-base mb-2" htmlFor="file-upload">
             Choose a file
           </label>
           <input
             id="file-upload"
             type="file"
             onChange={handleFileChange}
-            className="w-full px-3 py-2 border rounded-md"
+            className="w-full px-3 sm:px-4 py-2 bg-white/30 border border-white/30 rounded-md text-sm sm:text-base text-white 
+            file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm sm:file:text-base file:text-white 
+            file:bg-blue-600 hover:file:bg-blue-700 file:transition-colors"
           />
         </div>
         {file && (
-          <div className="mb-4">
-            <p className="text-gray-700">
+          <div className="space-y-1 sm:space-y-2">
+            <p className="text-white text-sm sm:text-base">
               Selected file: <span className="font-medium">{file.name}</span>
             </p>
-            <p className="text-gray-500 text-sm">
+            <p className="text-white/70 text-xs sm:text-sm">
               Size: {(file.size / 1024).toFixed(2)} KB
             </p>
           </div>
@@ -90,7 +92,9 @@ export default function FileUpload() {
         <button
           type="submit"
           disabled={uploading || !file}
-          className="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:opacity-50"
+          className="w-full sm:w-auto px-6 py-2 sm:py-3 bg-blue-600 text-white text-sm sm:text-base rounded-md 
+           focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 
+          disabled:opacity-50 enabled:hover:bg-blue-700 transition-colors"
         >
           {uploading ? 'Uploading...' : 'Upload File'}
         </button>

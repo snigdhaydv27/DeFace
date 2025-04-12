@@ -1,6 +1,7 @@
 import dbConnect from '@/lib/db';
 import File from '@/models/File';
-import { getToken } from 'next-auth/jwt';
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 
 export const config = {
   api: {
@@ -12,9 +13,9 @@ export async function POST(request) {
   await dbConnect();
 
   try {
-    const token = await getToken({ req: request });
+    const session = await getServerSession(authOptions);
 
-    if (!token) {
+    if (!session) {
       return new Response(JSON.stringify({ success: false, message: 'Not authorized' }), {
         status: 401,
         headers: { 'Content-Type': 'application/json' },
@@ -31,14 +32,12 @@ export async function POST(request) {
       });
     }
 
-    // In a real app, you would save the file to a storage service like S3
-    // For this example, we'll just store file metadata in MongoDB
     const newFile = await File.create({
       filename: file.name,
       path: `/uploads/${file.name}`,
       size: file.size,
       mimetype: file.type,
-      user: token.id,
+      user: session.user.id,
     });
 
     return new Response(JSON.stringify({
