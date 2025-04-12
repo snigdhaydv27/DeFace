@@ -2,8 +2,22 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="bg-gradient-to-r from-blue-950 to-[#4D55CC] text-white py-8">
-      <div className="container mx-auto px-4">
+    <footer className="relative text-white py-8 overflow-hidden border-none">
+      {/* Background Video */}
+      <video
+        autoPlay
+        loop
+        muted
+        className="absolute top-0 left-0 w-full h-full object-cover -z-10"
+      >
+        <source src="/bg.mp4" type="video/mp4" />
+      </video>
+
+      {/* Gradient Overlay */}
+      <div className="absolute top-0 left-0 w-full h-full"></div>
+
+      {/* Content */}
+      <div className="container mx-auto px-4 relative z-10">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-4 md:mb-0">
             <h3 className="text-xl font-bold">DeFace</h3>
@@ -14,9 +28,6 @@ export default function Footer() {
             </Link>
             <Link href="/contact" className="hover:text-blue-400">
               Contact Us
-            </Link>
-            <Link href="/privacy" className="hover:text-blue-400">
-              Privacy Policy
             </Link>
           </div>
         </div>
