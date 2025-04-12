@@ -2,6 +2,7 @@
 
 import AuthForm from '@/components/AuthForm';
 import { useAuth } from '@/context/AuthContext';
+import Footer from '@/components/Footer';
 
 export default function SignupPage() {
   const { signup } = useAuth();
