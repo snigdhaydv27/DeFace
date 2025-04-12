@@ -27,7 +27,7 @@ export default function Navbar() {
             <Link href="/contact" className="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md">
               Contact
             </Link>
-            <Link href="/contact" className="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md">
+            <Link href="/" className="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md">
               SignUp/Login
             </Link>
           </div>
@@ -86,6 +86,12 @@ export default function Navbar() {
               className="block text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md"
             >
               Contact
+            </Link>
+            <Link
+              href="/"
+              className="block text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md"
+            >
+              SignUp/Login
             </Link>
           </div>
         </div>
