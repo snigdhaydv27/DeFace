@@ -34,19 +34,19 @@ export default function AuthForm({ type, onSubmit }) {
   };
 
   return (
-    <div className="max-w-md mx-auto bg-white p-8 rounded-lg shadow-md">
-      <h2 className="text-2xl font-bold mb-6 text-center">
+    <div className="max-w-md mx-auto bg-transparent backdrop-blur-3xl p-8 rounded-lg shadow-2xl border border-white/20">
+      <h2 className="text-2xl font-bold mb-6 text-center text-white">
         {type === 'login' ? 'Login' : 'Sign Up'}
       </h2>
       {error && (
-        <div className="mb-4 p-3 bg-red-100 text-red-700 rounded-md">
+        <div className="mb-4 p-3 bg-red-500/50 backdrop-blur-sm text-white rounded-md">
           {error}
         </div>
       )}
       <form onSubmit={handleSubmit}>
         {type === 'signup' && (
           <div className="mb-4">
-            <label htmlFor="name" className="block text-gray-700 mb-2">
+            <label htmlFor="name" className="block text-white mb-2">
               Name
             </label>
             <input
@@ -54,13 +54,13 @@ export default function AuthForm({ type, onSubmit }) {
               id="name"
               value={name}
               onChange={(e) => setName(e.target.value)}
-              className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-4 py-2 bg-transparent border border-white/30 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-white placeholder-white/70"
               required
             />
           </div>
         )}
         <div className="mb-4">
-          <label htmlFor="email" className="block text-gray-700 mb-2">
+          <label htmlFor="email" className="block text-white mb-2">
             Email
           </label>
           <input
@@ -68,12 +68,12 @@ export default function AuthForm({ type, onSubmit }) {
             id="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full px-4 py-2 bg-transparent border border-white/30 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-white placeholder-white/70"
             required
           />
         </div>
         <div className="mb-6">
-          <label htmlFor="password" className="block text-gray-700 mb-2">
+          <label htmlFor="password" className="block text-white mb-2">
             Password
           </label>
           <input
@@ -81,7 +81,7 @@ export default function AuthForm({ type, onSubmit }) {
             id="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full px-4 py-2 bg-transparent border border-white/30 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-white placeholder-white/70"
             required
             minLength="6"
           />
@@ -94,18 +94,18 @@ export default function AuthForm({ type, onSubmit }) {
           {loading ? 'Processing...' : type === 'login' ? 'Login' : 'Sign Up'}
         </button>
       </form>
-      <div className="mt-4 text-center">
+      <div className="mt-4 text-center text-white">
         {type === 'login' ? (
           <p>
             Don't have an account?{' '}
-            <Link href="/signup" className="text-blue-600 hover:underline">
+            <Link href="/signup" className="text-blue-400 hover:underline">
               Sign up
             </Link>
           </p>
         ) : (
           <p>
             Already have an account?{' '}
-            <Link href="/login" className="text-blue-600 hover:underline">
+            <Link href="/login" className="text-blue-400 hover:underline">
               Login
             </Link>
           </p>

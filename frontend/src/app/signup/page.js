@@ -20,8 +20,33 @@ export default function SignupPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 py-12">
-      <AuthForm type="signup" onSubmit={handleSignup} />
+    <div className="min-h-screen relative flex flex-col">
+      {/* Background Video */}
+      <video
+        autoPlay
+        loop
+        muted
+        className="absolute top-0 left-0 w-full h-full object-cover -z-10"
+      >
+        <source src="/bg.mp4" type="video/mp4" />
+      </video>
+
+      {/* Gradient Overlay */}
+      <div className="absolute top-0 left-0 w-full h-full bg-transparent"></div>
+
+      {/* Main Content */}
+      <main className="flex-grow flex items-center justify-center px-4 sm:px-6 lg:px-8 py-12 sm:py-16 relative z-10">
+        <div className="w-full max-w-md">
+          <h1 className="text-2xl sm:text-3xl font-bold text-center text-white mb-8">
+            Create Your Account
+          </h1>
+          <div className="bg-transparent backdrop-blur-md rounded-xl shadow-2xl p-6 sm:p-8">
+            <AuthForm type="signup" onSubmit={handleSignup} />
+          </div>
+        </div>
+      </main>
+
+      <Footer />
     </div>
   );
 }
