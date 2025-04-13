@@ -12,6 +12,7 @@ import {
   Legend,
   ResponsiveContainer,
 } from 'recharts';
+import Image from 'next/image';
 
 export default function FileUpload() {
   const { user } = useAuth();
@@ -171,10 +172,11 @@ export default function FileUpload() {
               </h3>
               {imagePreview ? (
                 <div className="relative rounded-lg overflow-hidden h-[400px]">
-                  <img
+                  <Image
                     src={imagePreview}
                     alt="Selected"
-                    className="w-full h-full object-contain rounded-lg shadow-md bg-gray-800/50"
+                    fill
+                    className="object-contain rounded-lg shadow-md bg-gray-800/50"
                   />
                   {uploading && (
                     <div className="absolute inset-0 bg-black/50 flex items-center justify-center">

@@ -1,6 +1,7 @@
 import Footer from "@/components/Footer";
 import { Brain, NotepadText, Shield, Upload } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -28,7 +29,7 @@ export default function Home() {
               </h1>
               <p className="text-lg text-slate-400 mb-8">
                 Upload your images and let our advanced AI-powered tool analyze
-                them to determine if they're genuine or AI-generated.
+                them to determine if they&apos;re genuine or AI-generated.
               </p>
               <div className="flex space-x-4">
                 <Link
@@ -46,9 +47,11 @@ export default function Home() {
               </div>
             </div>
             <div className="md:w-1/2 md:h-[36rem]">
-              <img
+              <Image
                 src="/hero1.png"
                 alt="DeFace"
+                width={800}
+                height={720}
                 className="top-0 rounded-xl h-[45rem] w-full object-cover"
               />
             </div>
@@ -133,18 +136,20 @@ export default function Home() {
                     <Shield />
                   </div>
                   <h3 className="text-xl font-semibold mb-3">
-                    "In an era where visual misinformation can spread rapidly,
+                    &ldquo;In an era where visual misinformation can spread rapidly,
                     tools like DeFace are essential for maintaining trust in
-                    our digital ecosystem."
+                    our digital ecosystem.&rdquo;
                   </h3>
                 </div>
                 <p className="text-white relative right-52">Dr. Sarah Chen</p>
                 <p className="text-slate-400 relative right-44">Digital Forensics Expert</p>
               </div>
               <div className="md:h-[36rem] mt-10">
-                <img
+                <Image
                   src="/hero3.png"
                   alt="DeFace"
+                  width={800}
+                  height={720}
                   className="rounded-xl h-[45rem] w-full object-cover"
                 />
               </div>

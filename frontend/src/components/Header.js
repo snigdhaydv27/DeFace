@@ -5,6 +5,7 @@ import { useAuth } from "@/context/AuthContext";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { Menu, X } from "lucide-react"; // Import icons from lucide-react
+import Image from 'next/image';
 
 export default function Header() {
   const { user, logout } = useAuth();
@@ -32,10 +33,13 @@ export default function Header() {
       <div className="relative z-10 container mx-auto px-4 py-4">
         <div className="flex justify-between items-center">
           <Link href="/" className="flex items-center hover:opacity-80 transition-opacity">
-            <img
+            <Image
               src="/logo.png"
               alt="DeFace Logo"
+              width={56}
+              height={56}
               className="h-8 sm:h-14 w-auto"
+              priority
             />
           </Link>
 

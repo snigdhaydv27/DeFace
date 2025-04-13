@@ -25,10 +25,10 @@ export default function AboutPage() {
                 Our Mission
               </h2>
               <p className="text-sm sm:text-base text-white/80 mb-6">
-                "To empower individuals, institutions, and digital platforms
+                &quot;To empower individuals, institutions, and digital platforms
                 with AI-driven tools that distinguish between deepfakes,
                 AI-generated images, and authentic content — promoting trust,
-                transparency, and digital integrity." As synthetic media becomes
+                transparency, and digital integrity.&quot; As synthetic media becomes
                 more sophisticated, our mission is to tackle visual
                 misinformation with intelligent, accessible technology. Our
                 solution enables researchers to analyze fake content, helps

@@ -3,6 +3,7 @@
 import AuthForm from '@/components/AuthForm';
 import { useAuth } from '@/context/AuthContext';
 import Footer from '@/components/Footer';
+import Image from 'next/image';
 
 export default function SignupPage() {
   const { signup } = useAuth();
@@ -39,9 +40,11 @@ export default function SignupPage() {
         <div className="w-full max-w-md relative">
           {/* Added GIF */}
           <div className="absolute -top-10 -right-10 w-36 h-36 z-20">
-            <img
+            <Image
               src="/animation.gif"
               alt="Animated icon"
+              width={144}
+              height={144}
               className="w-full h-full object-contain"
             />
           </div>

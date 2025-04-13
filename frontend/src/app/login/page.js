@@ -3,6 +3,7 @@
 import AuthForm from '@/components/AuthForm';
 import Footer from '@/components/Footer';
 import { useAuth } from '@/context/AuthContext';
+import Image from 'next/image';
 
 export default function LoginPage() {
   const { login } = useAuth();
@@ -28,9 +29,11 @@ export default function LoginPage() {
           {/* First GIF - top right */}
           <div className="absolute -top-10 sm:-top-14 -right-0 sm:-right-0 lg:-right-12 
                          w-24 h-24 sm:w-32 sm:h-32 lg:w-40 lg:h-40 z-20">
-            <img
+            <Image
               src="/animation3.gif"
               alt="Animated icon"
+              width={144}
+              height={144}
               className="w-full h-full object-contain"
             />
           </div>
@@ -43,9 +46,11 @@ export default function LoginPage() {
           <div className=" absolute -top-10 sm:-top-14 
                          -left-0 sm:-left-0 lg:-left-8
                          w-24 h-24 sm:w-32 sm:h-32 lg:w-40 lg:h-40 z-20">
-            <img
+            <Image
               src="/animation2.gif"
               alt="Animated icon"
+              width={144}
+              height={144}
               className="w-full h-full object-contain"
             />
           </div>

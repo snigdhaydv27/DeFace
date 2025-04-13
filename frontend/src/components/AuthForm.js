@@ -113,7 +113,7 @@ export default function AuthForm({ type, onSubmit }) {
       <div className="mt-4 text-center text-white">
         {type === 'login' ? (
           <p>
-            Don't have an account?{' '}
+            Don&apos;t have an account?{' '}
             <Link href="/signup" className="text-[#A55B4B] hover:underline">
               Sign up
             </Link>

@@ -47,7 +47,7 @@ export default function ContactPage() {
         <div className="max-w-3xl mx-auto bg-transparent backdrop-blur-md p-4 sm:p-6 md:p-8 rounded-lg shadow-2xl border border-white/20">
           {submitted ? (
             <div className="bg-green-100/90 backdrop-blur-sm text-green-700 p-4 rounded-md mb-6 text-sm sm:text-base">
-              Thank you for your message! We'll get back to you soon.
+              Thank you for your message! We&apos;ll get back to you soon.
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
