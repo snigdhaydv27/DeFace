@@ -1,5 +1,3 @@
-
-
 ## Getting Started
 
 First, run the development server:
@@ -99,14 +97,15 @@ This project aims to provide a robust solution to image authenticity challenges 
 ## 📸 Screenshots
 
 ### 📤 Flowchart of Project
-![Upload Page](frontend\public\diagram.png)
+![Upload Page](/frontend/public/diagram.png)
 
 ### 🖼️ Home Page
-![Home Page](frontend\public\Screenshot 2025-04-13 152611.png)
+![Home Page](/frontend/public/Screenshot-2025-04-13-152611.png)
 
 ### 📊 Classification Output
-![Classification Output](frontend\public\Screenshot 2025-04-13 152858.png)
-![Classification Output](frontend\public\Screenshot 2025-04-13 152913.png)
+![Classification Output](/frontend/public/Screenshot-2025-04-13-152858.png)
+![Classification Output](/frontend/public/Screenshot-2025-04-13-152913.png)
+
 ---
 
 ## 🛡️ License
