@@ -16,15 +16,37 @@ import {
 export default function FileUpload() {
   const { user } = useAuth();
   const [file, setFile] = useState(null);
+  const [imagePreview, setImagePreview] = useState(null);
   const [uploading, setUploading] = useState(false);
   const [message, setMessage] = useState({ text: '', type: '' });
   const [results, setResults] = useState(null);
 
   const handleFileChange = (e) => {
-    setFile(e.target.files[0]);
+    const selectedFile = e.target.files[0];
+    setFile(selectedFile);
     setResults(null);
     setMessage({ text: '', type: '' });
+
+    // Create preview URL for the selected image
+    if (selectedFile && selectedFile.type.startsWith('image/')) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setImagePreview(reader.result);
+      };
+      reader.readAsDataURL(selectedFile);
+    } else {
+      setImagePreview(null);
+    }
   };
+
+  // Cleanup preview URL on component unmount
+  useEffect(() => {
+    return () => {
+      if (imagePreview) {
+        URL.revokeObjectURL(imagePreview);
+      }
+    };
+  }, [imagePreview]);
 
   const handleUpload = async (e) => {
     e.preventDefault();
@@ -117,7 +139,7 @@ export default function FileUpload() {
             onChange={handleFileChange}
             className="w-full px-3 sm:px-4 py-2 bg-white/30 border border-white/30 rounded-md text-sm sm:text-base text-white 
             file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm sm:file:text-base file:text-white 
-            file:bg-blue-600 hover:file:bg-blue-700 file:transition-colors"
+            file:bg-[#4F1C51] hover:file:hover:bg-[#210F37] file:transition-colors"
           />
         </div>
 
@@ -130,76 +152,87 @@ export default function FileUpload() {
         <button
           type="submit"
           disabled={uploading || !file}
-          className="w-full sm:w-auto px-6 py-2 sm:py-3 bg-blue-600 text-white text-sm sm:text-base rounded-md 
+          className="w-full sm:w-auto px-6 py-2 sm:py-3 bg-[#4F1C51] text-white text-sm sm:text-base rounded-md 
           focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 
-          disabled:opacity-50 enabled:hover:bg-blue-700 transition-colors"
+          disabled:opacity-50 enabled:hover:bg-[#210F37] transition-colors"
         >
-          {uploading ? 'Uploading...' : 'Upload Image'}
+          {uploading ? 'Analysing...' : 'Analyse Image'}
         </button>
       </form>
 
       {/* === Results Section === */}
-      {results?.classifications?.length > 0 && (
+      {(results?.classifications?.length > 0 || imagePreview) && (
         <div className="mt-12 w-full">
           <div className="flex flex-col lg:flex-row gap-10">
             {/* === Uploaded Image === */}
             <div className="lg:w-1/2">
               <h3 className="text-white text-xl font-semibold mb-4">
-                Uploaded Image
+                {results ? 'Analysis Results' : 'Selected Image'}
               </h3>
-              {results?.file?.filename ? (
-                <img
-                  src={`/uploads/${results.file.filename}`}
-                  alt="Uploaded"
-                  className="rounded-lg shadow-md w-full h-auto"
-                />
+              {imagePreview ? (
+                <div className="relative rounded-lg overflow-hidden h-[400px]">
+                  <img
+                    src={imagePreview}
+                    alt="Selected"
+                    className="w-full h-full object-contain rounded-lg shadow-md bg-gray-800/50"
+                  />
+                  {uploading && (
+                    <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
+                      <div className="text-white text-lg">Analyzing...</div>
+                    </div>
+                  )}
+                </div>
               ) : (
-                <div className="w-full h-64 bg-gray-700 rounded-lg flex items-center justify-center">
-                  <p className="text-white">Image preview not available</p>
+                <div className="w-full h-[400px] bg-gray-700 rounded-lg flex items-center justify-center">
+                  <p className="text-white">No image selected</p>
                 </div>
               )}
             </div>
 
-            {/* === Progress Bars === */}
-            <div className="lg:w-1/2">
-              <h3 className="text-white text-xl font-semibold mb-4">
-                Classification Results
-              </h3>
-              <div className="space-y-4">
-                {results.classifications.map((result) => (
-                  <div key={result.label} className="flex items-center">
-                    <div className="w-32 text-white">{result.label}</div>
-                    <div className="w-full bg-gray-700 rounded-full h-4 mx-3">
-                      <div
-                        className="bg-blue-500 h-4 rounded-full"
-                        style={{ width: `${(result.score * 100).toFixed(1)}%` }}
-                      ></div>
-                    </div>
-                    <div className="w-16 text-white text-right">
-                      {(result.score * 100).toFixed(1)}%
-                    </div>
+            {/* === Classification Results === */}
+            {results?.classifications?.length > 0 && (
+              <div className="lg:w-1/2">
+                <h3 className="text-white text-xl font-semibold mb-4">
+                  Classification Results
+                </h3>
+                <div className="h-[400px] bg-gray-800/30 rounded-lg p-6 backdrop-blur-sm overflow-y-auto">
+                  <div className="space-y-4 mb-6">
+                    {results.classifications.map((result) => (
+                      <div key={result.label} className="flex items-center">
+                        <div className="w-32 text-white">{result.label}</div>
+                        <div className="w-full bg-gray-700 rounded-full h-4 mx-3">
+                          <div
+                            className="bg-blue-500 h-4 rounded-full"
+                            style={{ width: `${(result.score * 100).toFixed(1)}%` }}
+                          ></div>
+                        </div>
+                        <div className="w-16 text-white text-right">
+                          {(result.score * 100).toFixed(1)}%
+                        </div>
+                      </div>
+                    ))}
                   </div>
-                ))}
-              </div>
 
-              {/* Most Likely + Top 2 */}
-              <div className="mt-6 space-y-2">
-                <p className="text-green-400 text-lg">
-                  <strong>Most Likely Class:</strong>{' '}
-                  {predictedClass.label} ({(predictedClass.score * 100).toFixed(2)}%)
-                </p>
-                {topTwoClasses[1] && (
-                  <p className="text-white text-base">
-                    <strong>Top 2:</strong> {topTwoClasses[0].label},{' '}
-                    {topTwoClasses[1].label}
-                  </p>
-                )}
-                <p className="text-green-400 text-lg">
-                  <strong>Confidence Margin:</strong>{' '}
-                  {confidenceMargin.toFixed(2)}%
-                </p>
+                  {/* Most Likely + Top 2 */}
+                  <div className="space-y-3 border-t border-gray-600 pt-6">
+                    <p className="text-green-400 text-lg">
+                      <strong>Most Likely Class:</strong>{' '}
+                      {predictedClass.label} ({(predictedClass.score * 100).toFixed(2)}%)
+                    </p>
+                    {topTwoClasses[1] && (
+                      <p className="text-white text-base">
+                        <strong>Top 2:</strong> {topTwoClasses[0].label},{' '}
+                        {topTwoClasses[1].label}
+                      </p>
+                    )}
+                    <p className="text-green-400 text-lg">
+                      <strong>Confidence Margin:</strong>{' '}
+                      {confidenceMargin.toFixed(2)}%
+                    </p>
+                  </div>
+                </div>
               </div>
-            </div>
+            )}
           </div>
 
           {/* === Full Width Chart === */}

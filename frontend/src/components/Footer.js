@@ -5,17 +5,17 @@ export default function Footer() {
   return (
     <footer className="relative text-white py-8 overflow-hidden border-none">
       {/* Background Video */}
-      <video
+      {/* <video
         autoPlay
         loop
         muted
         className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/4 min-w-full min-h-full object-cover"
       >
         <source src="/bg.mp4" type="video/mp4" />
-      </video>
+      </video> */}
 
       {/* Gradient Overlay */}
-      <div className="absolute top-0 left-0 w-full h-full bg-black/30"></div>
+      {/* <div className="absolute top-0 left-0 w-full h-full bg-black/30"></div> */}
 
       {/* Content */}
       <div className="container mx-auto px-4 relative z-10">
