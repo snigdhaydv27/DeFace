@@ -7,8 +7,8 @@ import ProtectedRoute from '@/components/ProtectedRoute';
 export default function DashboardPage() {
   return (
     <ProtectedRoute>
-       {/* Background Video */}
-       <video
+      {/* Background Video */}
+      <video
         autoPlay
         loop
         muted
@@ -28,7 +28,7 @@ export default function DashboardPage() {
           {/* Additional dashboard components can be added here */}
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </ProtectedRoute>
   );
 }

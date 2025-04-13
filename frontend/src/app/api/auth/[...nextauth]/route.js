@@ -1,10 +1,8 @@
 import NextAuth from "next-auth";
 
 export const authOptions = {
-  // Your auth configuration here
-  // Example:
   providers: [
-    // Add your providers here
+    
   ],
   session: {
     strategy: "jwt",
