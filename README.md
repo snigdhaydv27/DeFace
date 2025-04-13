@@ -100,11 +100,11 @@ This project aims to provide a robust solution to image authenticity challenges 
 ![Upload Page](/frontend/public/diagram.png)
 
 ### 🖼️ Home Page
-![Home Page](/frontend/public/Screenshot-2025-04-13-152611.png)
+![Home Page](/frontend/public/home.png)
 
 ### 📊 Classification Output
-![Classification Output](/frontend/public/Screenshot-2025-04-13-152858.png)
-![Classification Output](/frontend/public/Screenshot-2025-04-13-152913.png)
+![Classification Output](/frontend/public/classify.png)
+![Classification Output](/frontend/public/classify2.png)
 
 ---
 
