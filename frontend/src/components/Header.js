@@ -33,15 +33,15 @@ export default function Header() {
           />
         </Link>
         <nav className="space-x-6">
-          <Link href="/about" className="hover:text-blue-400 transition-colors">
+          <Link href="/about" className="hover:text-[#4F1C51] transition-colors">
             About Us
           </Link>
-          <Link href="/contact" className="hover:text-blue-400 transition-colors">
+          <Link href="/contact" className="hover:text-[#4F1C51] transition-colors">
             Contact Us
           </Link>
           {user ? (
             <>
-              <Link href="/dashboard" className="hover:text-blue-400 transition-colors">
+              <Link href="/dashboard" className="hover:text-[#4F1C51] transition-colors">
                 Dashboard
               </Link>
               <button
@@ -49,17 +49,17 @@ export default function Header() {
                   logout();
                   router.push('/');
                 }}
-                className="hover:text-blue-400 transition-colors"
+                className="hover:text-[#4F1C51] transition-colors"
               >
                 Logout
               </button>
             </>
           ) : (
             <>
-              <Link href="/login" className="hover:text-blue-400 transition-colors">
+              <Link href="/login" className="hover:text-[#4F1C51] transition-colors">
                 Login
               </Link>
-              <Link href="/signup" className="hover:text-blue-400 transition-colors">
+              <Link href="/signup" className="hover:text-[#4F1C51] transition-colors">
                 Sign Up
               </Link>
             </>

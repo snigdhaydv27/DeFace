@@ -76,7 +76,7 @@ export default function FileUpload() {
             onChange={handleFileChange}
             className="w-full px-3 sm:px-4 py-2 bg-white/30 border border-white/30 rounded-md text-sm sm:text-base text-white 
             file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm sm:file:text-base file:text-white 
-            file:bg-blue-600 hover:file:bg-blue-700 file:transition-colors"
+            file:bg-[#4F1C51] hover:file:bg-[#210F37] file:transition-colors"
           />
         </div>
         {file && (
@@ -92,9 +92,9 @@ export default function FileUpload() {
         <button
           type="submit"
           disabled={uploading || !file}
-          className="w-full sm:w-auto px-6 py-2 sm:py-3 bg-blue-600 text-white text-sm sm:text-base rounded-md 
-           focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 
-          disabled:opacity-50 enabled:hover:bg-blue-700 transition-colors"
+          className="w-full sm:w-auto px-6 py-2 sm:py-3 bg-[#4F1C51] text-white text-sm sm:text-base rounded-md 
+           focus:outline-none focus:ring-2 focus:ring-[#210F37] focus:ring-offset-2 
+          disabled:opacity-50 enabled:bg-[#4F1C51] enabled:hover:bg-[#210F37] transition-colors"
         >
           {uploading ? 'Uploading...' : 'Upload File'}
         </button>

@@ -9,7 +9,7 @@ export default function Footer() {
         autoPlay
         loop
         muted
-        className="absolute top-0 left-0 w-full h-full object-cover -z-10"
+        className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/4 min-w-full min-h-full object-cover"
       >
         <source src="/bg.mp4" type="video/mp4" />
       </video>
@@ -24,21 +24,21 @@ export default function Footer() {
             <Link 
               href="https://instagram.com/snigdha_ydv" 
               target="_blank"
-              className="hover:text-blue-400 transition-colors"
+              className="hover:text-[#4F1C51] transition-colors"
             >
               <Instagram size={24} />
             </Link>
             <Link 
               href="https://github.com/snigdhaydv27" 
               target="_blank"
-              className="hover:text-blue-400 transition-colors"
+              className="hover:text-[#4F1C51] transition-colors"
             >
               <Github size={24} />
             </Link>
             <Link 
               href="https://www.linkedin.com/in/snigdha-kumar-90445b298/" 
               target="_blank"
-              className="hover:text-blue-400 transition-colors"
+              className="hover:text-[#4F1C51] transition-colors"
             >
               <Linkedin size={24} />
             </Link>
