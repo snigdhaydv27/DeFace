@@ -6,12 +6,6 @@ First, run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
@@ -98,20 +92,21 @@ This project aims to provide a robust solution to image authenticity challenges 
 
 ## 📍 Deployment
 
-🔗 Coming Soon on [Vercel](https://vercel.com)
+🔗[Vercel](https://deface-sand.vercel.app/)
 
 ---
 
 ## 📸 Screenshots
 
-### 🖼️ Home Page
-![Home Page](screenshots/homepage.png)
+### 📤 Flowchart of Project
+![Upload Page](frontend\public\diagram.png)
 
-### 📤 Image Upload Interface
-![Upload Page](screenshots/upload.png)
+### 🖼️ Home Page
+![Home Page](frontend\public\Screenshot 2025-04-13 152611.png)
 
 ### 📊 Classification Output
-![Classification Output](screenshots/output.png)
+![Classification Output](frontend\public\Screenshot 2025-04-13 152858.png)
+![Classification Output](frontend\public\Screenshot 2025-04-13 152913.png)
 ---
 
 ## 🛡️ License
